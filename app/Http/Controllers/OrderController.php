@@ -18,7 +18,7 @@ class OrderController extends Controller
     {
         $orders = Order::query()
                    ->latest()
-                   ->paginate($request->per_page ?? 2);
+                   ->paginate($request->per_page ?? 100);
 
          return response()->json([
             'status' => 'success',
